@@ -106,6 +106,8 @@
             let userDetail = JSON.parse(localStorage.getItem("userDetails")) ?? [];
             for(let data of userDetail){
               if(data.email == email){
+
+                
                 checkStatus = 1;
                 break;
               }
