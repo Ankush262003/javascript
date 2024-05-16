@@ -69,40 +69,95 @@
 
           <!-- Name -->
           <label for="">Name</label>
-          <input type="text" name="username" />
+          <input type="text" name="username" required />
 
           <!-- Email -->
           <label for="">Email</label>
-          <input type="text" name="email" />
+          <input type="text" name="email" required />
 
           <!-- Phone -->
           <label for="">Phone</label>
-          <input type="text" name="phone" />
+          <input type="text" name="phone" required />
 
           <!-- Address -->
           <label for="">Address</label>
-          <input type="text" name="address" />
+          <input type="text" name="address" required />
         
           <!-- Submit button -->
           <button>Save</button>
     </form>
 
     <div class="main" >
-        <div class="items" >
-            <span>&times;</span>
-            <h5>Name</h5>
-            <h5>Email</h5>
-            <h5>Phone</h5>
-            <h5>Address</h5>
-        </div>
+        
     </div>
 
     <!-- javascript -->
     <script>
+        let main = document.querySelector(".main")
         let form = document.querySelector("form")
-        form.addEventListener("submit", ()=>{
-            
+        form.addEventListener("submit", (event)=>{
+            let name = event.target.username.value;
+            let email= event.target.email.value;
+            let phone = event.target.phone.value;
+            let address = event.target.address.value;
+            let checkStatus = 0;
+
+            //get data from Local Storage
+            let userDetail = JSON.parse(localStorage.getItem("userDetails")) ?? [];
+            for(let data of userDetail){
+              if(data.email == email){
+                checkStatus = 1;
+                break;
+              }
+            }
+
+            if(checkStatus == 1){
+                alert("User already exist");
+            }else{
+                userDetail.push({
+                "name":name,
+                "email":email,
+                "phone":phone,
+                "address":address
+               })
+
+                // set data in local storage
+                localStorage.setItem("userDetails", JSON.stringify(userDetail))
+                event.target.reset(); // reset the value of all input
+            }
+
+            displayData()
+            event.preventDefault();  // stop refresh of form
         })
+
+        let displayData = () =>{
+            let userDetail = JSON.parse(localStorage.getItem("userDetails")) ?? [];
+            let finalData = '';
+            userDetail.forEach((element,index) => {
+                finalData += `
+                
+                    <div class="items" >
+                        <span onclick = 'removeData(${index})' >&times;</span>
+                        <h5>${element.name}</h5>
+                        <h5>${element.email}</h5>
+                        <h5>${element.phone}</h5>
+                        <h5>${element.address}</h5>
+                    </div>
+                `
+            });
+            main.innerHTML = finalData
+        }
+        
+        // Remove user details
+        let removeData = (payloda) =>{
+            let userDetail = JSON.parse(localStorage.getItem("userDetails")) ?? [];
+            userDetail.splice(payloda, 1)
+
+            localStorage.setItem("userDetails", JSON.stringify(userDetail))
+            displayData()
+        }
+
+        displayData()
     </script>
 </body>
 </html>
