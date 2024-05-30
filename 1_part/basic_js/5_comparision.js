@@ -1,10 +1,11 @@
+// Comparision Operaters:
+
 console.log(2 > 1);
 console.log(2 < 1);
 console.log(2 >= 1);
 console.log(2 <= 1);
 console.log(2 == 1);
 console.log(2 != 1);
-
 
 
 console.log("2" > 1);  // this is bad habit make sure both shoud be same data type
@@ -20,7 +21,10 @@ console.log(undefined == 0)
 console.log(undefined >= 0)
 
 
-// === use for Strict check 
+// === oprater use for Strict check:
 console.log(2 === 2)  // === check dataType and also check value
 console.log("2" === 2)
 
+// Note:
+// 1- Always compare tow operend with same data type
+// 2- 

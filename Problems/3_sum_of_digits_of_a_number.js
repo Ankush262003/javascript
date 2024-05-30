@@ -9,6 +9,7 @@ for(let i = 1; i <= n_length; i++ ){
        sum = sum + separeted_value;
     n = Math.floor(n / 10)
 }
+
 // console.log("final result =>",sum)
 
 

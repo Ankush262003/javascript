@@ -1,3 +1,5 @@
+// String
+
 let name = "shivank singh"; // this First way to declare string 
 const count = 50
 
@@ -16,6 +18,7 @@ console.log(name1.toUpperCase())  // using '.toUpperCase() method' convert lower
 console.log(name1.indexOf("t"))  // using this method we fined on which position "t" is present
 
 
+// getting all letter in a range
 name2 = name1.substring(0,4)
 console.log(name2)
 

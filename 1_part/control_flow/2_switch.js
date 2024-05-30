@@ -30,5 +30,6 @@ switch (month) {
 
 
 
-
-
+// Note:
+// 1- Mendetry to define default statement after end of case
+// 2- Mendetry to define break statement in each case

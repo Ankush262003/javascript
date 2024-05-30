@@ -1,9 +1,10 @@
-// filter method
+// filter method:
+
 const nums = [1,2,3,4,5,6,7,8,9,10];
 
  // in one line
 const result = nums.filter((value, number, index)=> value > 5) 
-// console.log(result)
+console.log(result)
 
 // in multile line
 const finalReslt = nums.filter((value)=>{
@@ -31,7 +32,7 @@ const books = [
 ]
 
 const bookResult = books.filter((allBooks)=> allBooks.genre === "Finence");
-// console.log(bookResult) 
+console.log(bookResult) 
 
 const bookPublishResult = books.filter((allBooks)=> { 
     return allBooks.publish > 1993 &&  allBooks.genre === "Commerce" 
@@ -43,10 +44,10 @@ console.log(bookPublishResult)
 // -> 
 
 
-// __________________________________________________________________________________________________________//
+// __________________________________________________________________//
 
 
-// map method:
+// Map Method:
 const yourNums = [1,2,3,4,5,6,7,8,9,10]
 const yourResult = yourNums.map((values)=> values + 10);
 console.log(yourResult)
@@ -57,13 +58,12 @@ const ans = yourNums.map((value)=> value * 10).map((value)=> value + 1).filter((
 console.log(ans)
 
 
-// reduce method:
-
+// Reduce Method:
 const valueForReduce = [1,2,3];
 const reduceResult = valueForReduce.reduce((acc, currValue) =>{
     console.log(`acc value ${acc} and currValue ${currValue}`)        
     return acc + currValue
-}, 0) // 0 <- is initial value
+}, 0)  // 0 <- is initial value
 
 console.log(reduceResult)
 

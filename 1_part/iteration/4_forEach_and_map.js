@@ -35,7 +35,7 @@ myCoding.forEach((items, index , arr)=>{
       console.log(items.name);
 })
 
-// => store forEach in variable 
+// => Trying to store forEach in variable 
 const result = myCoding.forEach((items)=>{    
       console.log(items.name);
 })

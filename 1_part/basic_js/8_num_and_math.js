@@ -10,8 +10,6 @@ console.log(typeof(balance1))
 console.log(`This is length of balance1 variable => ${balance1.length}`)
 
 
-
-
 // toFixed(number) method 
 console.log(`After decimal point fix only 1 digits ${balance.toFixed(1)} `)
 console.log(`After decimal point fix only 2 digits ${balance.toFixed(2)} `)
@@ -27,6 +25,9 @@ console.log(`precice value of ${preNum} is ${preNum.toPrecision(1)}`)
 // toLocaleString() method
 const money = 1000000000;
 console.log(`Conver this ${money} is Indian stander value ${money.toLocaleString("en-IN")}`)
+
+
+
 
 
 // ***************************** MATHS ***************************** 
@@ -54,12 +55,17 @@ console.log(`Accese lowest value from array ${Math.min(5,6,7,9,1,4,6,3)}`)
 console.log(`Accese highest value from array ${Math.max(5,6,7,9,1,4,6,3)}`)
 
 
-
 // Math.random()    -> This is give value between 0 and 1 allways 
 console.log(`${Math.random()}`) 
 
-const min = 9999
-const max = 1555
+
+
+// ******************* OTP GENERATER *******************
+const max = 9999
+const min = 1555
 
 const otp = Math.round(Math.random() * (max-min +1 ) + min )
 console.log(`This is OTP ${otp}`) 
+
+
+// Note:
